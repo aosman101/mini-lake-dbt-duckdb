@@ -19,17 +19,15 @@ A simple, no-cost data engineering project showcasing local ETL and modelling wi
 
 ## Features
 
-- Local DuckDB file as a lightweight "lake"/warehouse  
-- dbt models: staging → marts, plus dbt tests  
-- CI workflow (GitHub Actions) that runs `dbt build` on push/PR  
-- Minimal sample data (CSV) so the project runs on any laptop
-
+- A local DuckDB file can serve as a lightweight data lake or warehouse.  
+- dbt models: staging to marts, including dbt tests.  
+- CI workflow using GitHub Actions that runs `dbt build` on push or PR.  
+- Minimal sample data in CSV format so the project can run on any laptop.
 ## Tech stack
 
-- dbt Core + dbt-duckdb adapter. :contentReference[oaicite:7]{index=7}  
-- DuckDB (local .duckdb file). :contentReference[oaicite:8]{index=8}  
-- GitHub Actions for CI. :contentReference[oaicite:9]{index=9}  
-- Badges via Shields.io. :contentReference[oaicite:10]{index=10}
+- dbt Core with the dbt-duckdb adapter. 
+- DuckDB (local .duckdb file). 
+- Badges available through Shields.io.
 
 ## Project Structure
 
