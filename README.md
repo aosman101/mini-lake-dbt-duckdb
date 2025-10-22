@@ -1,8 +1,5 @@
 # Mini Lake — DuckDB + dbt (local)
 
-![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)
-
-
 <!-- Top badges: status, tech, license -->
 <p align="left">
   <img alt="status" src="https://img.shields.io/badge/status-WIP-yellow" />
@@ -51,4 +48,3 @@ mini-lake-dbt-duckdb/
   ├─ .github/workflows/ci.yml
   
   └─ README.md
-
