@@ -9,13 +9,13 @@
   <img alt="License" src="https://img.shields.io/badge/License-MIT-green" />
 </p>
 
-Mini Lake is a laptop-based data engineering pipeline designed to ingest raw CSV files, transform them using dbt Core with the dbt-duckdb adapter, and store the results in a local DuckDB file. It features a mini-lake architecture that includes staging and marts, as well as automated testing and version-controlled SQL. This setup is ideal for students looking to build their portfolios.
+Mini Lake is a laptop-based data engineering pipeline designed to ingest raw CSV files, transform them using dbt Core with the dbt-duckdb adapter, and store the results in a local DuckDB file. It features a mini-lake architecture that includes staging areas and data marts, along with automated testing and version-controlled SQL. This setup is ideal for students looking to enhance their portfolios.
 
 ---
 
 ## About
 
-A simple, no-cost data engineering project showcasing local ETL and modelling with **DuckDB + dbt**. It's perfect for learning dbt patterns (staging, marts, tests, docs) without incurring cloud costs. (Refer to the dbt+DuckDB quickstart for more information.)
+A straightforward, cost-free data engineering project demonstrating local ETL and modelling with **DuckDB + dbt**. It's ideal for learning dbt patterns (staging, marts, tests, docs) without incurring cloud expenses. (See the dbt+DuckDB quickstart for further information.)
 
 ## Features
 
@@ -28,6 +28,17 @@ A simple, no-cost data engineering project showcasing local ETL and modelling wi
 - dbt Core with the dbt-duckdb adapter. 
 - DuckDB (local .duckdb file). 
 - Badges available through Shields.io.
+
+## How to create this file (~/dbt/profiles.yml).
+
+# Yaml
+
+mini_lake:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "./mini_lake.duckdb"
 
 ## Project Structure
 
