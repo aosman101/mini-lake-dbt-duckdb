@@ -1,0 +1,16 @@
+name: "mini_lake"
+version: "1.0.0"
+profile: "mini_lake"
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+
+models:
+  mini_lake:
+    +materialized: table
+
+seeds:
+  mini_lake:
+    +header: true
+    +quote_columns: false
