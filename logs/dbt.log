@@ -1,0 +1,463 @@
+[0m19:34:27.953538 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70150c99cf80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70150e5c5970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70150c268470>]}
+
+
+============================== 19:34:28.106152 | 87144adf-061f-4ae4-a4e5-14a954126451 ==============================
+[0m19:34:28.106152 [info ] [MainThread]: Running with dbt=1.10.13
+[0m19:34:28.106950 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'profiles_dir': '/home/codespace/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'log_cache_events': 'False', 'version_check': 'True', 'indirect_selection': 'eager', 'printer_width': '80', 'introspect': 'True', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'quiet': 'False', 'empty': 'None', 'static_parser': 'True', 'debug': 'False', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'log_path': '/workspaces/mini-lake-dbt-duckdb/logs', 'target_path': 'None', 'no_print': 'None', 'use_experimental_parser': 'False', 'partial_parse': 'True'}
+[0m19:34:28.118994 [info ] [MainThread]: dbt version: 1.10.13
+[0m19:34:28.119578 [info ] [MainThread]: python version: 3.12.1
+[0m19:34:28.120097 [info ] [MainThread]: python path: /workspaces/mini-lake-dbt-duckdb/.venv/bin/python
+[0m19:34:28.120622 [info ] [MainThread]: os info: Linux-6.8.0-1030-azure-x86_64-with-glibc2.39
+[0m19:34:28.247828 [info ] [MainThread]: Using profiles dir at /home/codespace/.dbt
+[0m19:34:28.248552 [info ] [MainThread]: Using profiles.yml file at /home/codespace/.dbt/profiles.yml
+[0m19:34:28.249089 [info ] [MainThread]: Using dbt_project.yml file at /workspaces/mini-lake-dbt-duckdb/dbt_project.yml
+[0m19:34:28.250517 [info ] [MainThread]: adapter type: duckdb
+[0m19:34:28.251055 [info ] [MainThread]: adapter version: 1.9.6
+[0m19:34:28.369307 [info ] [MainThread]: Configuration:
+[0m19:34:28.369941 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m19:34:28.370498 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m19:34:28.371014 [info ] [MainThread]: Required dependencies:
+[0m19:34:28.371566 [debug] [MainThread]: Executing "git --help"
+[0m19:34:28.373875 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m19:34:28.374418 [debug] [MainThread]: STDERR: "b''"
+[0m19:34:28.374865 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m19:34:28.375440 [info ] [MainThread]: Connection:
+[0m19:34:28.376215 [info ] [MainThread]:   database: mini_lake
+[0m19:34:28.376985 [info ] [MainThread]:   schema: main
+[0m19:34:28.377491 [info ] [MainThread]:   path: ./mini_lake.duckdb
+[0m19:34:28.377934 [info ] [MainThread]:   config_options: None
+[0m19:34:28.378450 [info ] [MainThread]:   extensions: None
+[0m19:34:28.378979 [info ] [MainThread]:   settings: {}
+[0m19:34:28.379554 [info ] [MainThread]:   external_root: .
+[0m19:34:28.380081 [info ] [MainThread]:   use_credential_provider: None
+[0m19:34:28.380653 [info ] [MainThread]:   attach: None
+[0m19:34:28.381164 [info ] [MainThread]:   filesystems: None
+[0m19:34:28.381763 [info ] [MainThread]:   remote: None
+[0m19:34:28.382293 [info ] [MainThread]:   plugins: None
+[0m19:34:28.382846 [info ] [MainThread]:   disable_transactions: False
+[0m19:34:28.383496 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m19:34:28.484351 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m19:34:28.697814 [debug] [MainThread]: Using duckdb connection "debug"
+[0m19:34:28.698430 [debug] [MainThread]: On debug: select 1 as id
+[0m19:34:28.698886 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:34:28.871243 [debug] [MainThread]: SQL status: OK in 0.172 seconds
+[0m19:34:28.872533 [debug] [MainThread]: On debug: Close
+[0m19:34:28.873122 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m19:34:28.873639 [info ] [MainThread]: [32mAll checks passed![0m
+[0m19:34:28.874961 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.9827269, "process_in_blocks": "7344", "process_kernel_time": 0.24853, "process_mem_max_rss": "151444", "process_out_blocks": "48", "process_user_time": 1.730733}
+[0m19:34:28.875594 [debug] [MainThread]: Command `dbt debug` succeeded at 19:34:28.875483 after 0.98 seconds
+[0m19:34:28.876029 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m19:34:28.876518 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70150c95f5f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x701505e2a1b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x701505e297c0>]}
+[0m19:34:28.877031 [debug] [MainThread]: Flushing usage events
+[0m19:34:29.245254 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:35:49.310822 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70b6bde0ea80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70b6be01af30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70b6beaacfb0>]}
+
+
+============================== 19:35:49.314061 | abeeb024-681f-4def-bd97-9a7d423a97c9 ==============================
+[0m19:35:49.314061 [info ] [MainThread]: Running with dbt=1.10.13
+[0m19:35:49.314768 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'quiet': 'False', 'profiles_dir': '/home/codespace/.dbt', 'log_cache_events': 'False', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'empty': 'None', 'cache_selected_only': 'False', 'invocation_command': 'dbt seed', 'write_json': 'True', 'printer_width': '80', 'log_format': 'default', 'indirect_selection': 'eager', 'no_print': 'None', 'log_path': '/workspaces/mini-lake-dbt-duckdb/logs', 'target_path': 'None', 'version_check': 'True', 'fail_fast': 'False', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None'}
+[0m19:35:49.551266 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'abeeb024-681f-4def-bd97-9a7d423a97c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70b6b97f7230>]}
+[0m19:35:49.640260 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'abeeb024-681f-4def-bd97-9a7d423a97c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70b6bd9e68d0>]}
+[0m19:35:49.641973 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m19:35:49.742445 [debug] [MainThread]: checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+[0m19:35:49.743151 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m19:35:49.743662 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'abeeb024-681f-4def-bd97-9a7d423a97c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70b6be4e5460>]}
+[0m19:35:51.203158 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'abeeb024-681f-4def-bd97-9a7d423a97c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70b6b72df5c0>]}
+[0m19:35:51.297327 [debug] [MainThread]: Wrote artifact WritableManifest to /workspaces/mini-lake-dbt-duckdb/target/manifest.json
+[0m19:35:51.299488 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspaces/mini-lake-dbt-duckdb/target/semantic_manifest.json
+[0m19:35:51.315648 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'abeeb024-681f-4def-bd97-9a7d423a97c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70b6b695c8f0>]}
+[0m19:35:51.316252 [info ] [MainThread]: Found 2 models, 1 seed, 4 data tests, 444 macros
+[0m19:35:51.316792 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'abeeb024-681f-4def-bd97-9a7d423a97c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70b6b696a7b0>]}
+[0m19:35:51.318636 [info ] [MainThread]: 
+[0m19:35:51.319204 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m19:35:51.319770 [info ] [MainThread]: 
+[0m19:35:51.320536 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m19:35:51.321608 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_mini_lake'
+[0m19:35:51.357018 [debug] [ThreadPool]: Using duckdb connection "list_mini_lake"
+[0m19:35:51.357626 [debug] [ThreadPool]: On list_mini_lake: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "mini_lake", "target_name": "dev", "connection_name": "list_mini_lake"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"mini_lake"'
+    
+  
+  
+[0m19:35:51.358116 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:35:51.373236 [debug] [ThreadPool]: SQL status: OK in 0.015 seconds
+[0m19:35:51.374806 [debug] [ThreadPool]: On list_mini_lake: Close
+[0m19:35:51.375700 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_mini_lake, now create_mini_lake_main)
+[0m19:35:51.376288 [debug] [ThreadPool]: Creating schema "database: "mini_lake"
+schema: "main"
+"
+[0m19:35:51.383509 [debug] [ThreadPool]: Using duckdb connection "create_mini_lake_main"
+[0m19:35:51.383984 [debug] [ThreadPool]: On create_mini_lake_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "mini_lake", "target_name": "dev", "connection_name": "create_mini_lake_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='mini_lake'
+        and type='sqlite'
+    
+  
+[0m19:35:51.384437 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:35:51.385528 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m19:35:51.386860 [debug] [ThreadPool]: Using duckdb connection "create_mini_lake_main"
+[0m19:35:51.387306 [debug] [ThreadPool]: On create_mini_lake_main: BEGIN
+[0m19:35:51.387975 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:35:51.388413 [debug] [ThreadPool]: Using duckdb connection "create_mini_lake_main"
+[0m19:35:51.388815 [debug] [ThreadPool]: On create_mini_lake_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "mini_lake", "target_name": "dev", "connection_name": "create_mini_lake_main"} */
+
+    
+    
+        create schema if not exists "mini_lake"."main"
+    
+[0m19:35:51.389491 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:35:51.390437 [debug] [ThreadPool]: On create_mini_lake_main: COMMIT
+[0m19:35:51.390878 [debug] [ThreadPool]: Using duckdb connection "create_mini_lake_main"
+[0m19:35:51.391282 [debug] [ThreadPool]: On create_mini_lake_main: COMMIT
+[0m19:35:51.391922 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:35:51.392382 [debug] [ThreadPool]: On create_mini_lake_main: Close
+[0m19:35:51.397837 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_mini_lake_main, now list_mini_lake_main)
+[0m19:35:51.406284 [debug] [ThreadPool]: Using duckdb connection "list_mini_lake_main"
+[0m19:35:51.406773 [debug] [ThreadPool]: On list_mini_lake_main: BEGIN
+[0m19:35:51.407204 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:35:51.407958 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m19:35:51.408423 [debug] [ThreadPool]: Using duckdb connection "list_mini_lake_main"
+[0m19:35:51.408877 [debug] [ThreadPool]: On list_mini_lake_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "mini_lake", "target_name": "dev", "connection_name": "list_mini_lake_main"} */
+select
+      'mini_lake' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'mini_lake'
+  
+[0m19:35:51.467367 [debug] [ThreadPool]: SQL status: OK in 0.058 seconds
+[0m19:35:51.468870 [debug] [ThreadPool]: On list_mini_lake_main: ROLLBACK
+[0m19:35:51.470234 [debug] [ThreadPool]: Failed to rollback 'list_mini_lake_main'
+[0m19:35:51.470719 [debug] [ThreadPool]: On list_mini_lake_main: Close
+[0m19:35:51.471653 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'abeeb024-681f-4def-bd97-9a7d423a97c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70b6c01a5010>]}
+[0m19:35:51.472236 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:35:51.472707 [debug] [MainThread]: On master: BEGIN
+[0m19:35:51.473102 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:35:51.473854 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m19:35:51.474286 [debug] [MainThread]: On master: COMMIT
+[0m19:35:51.474730 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:35:51.475130 [debug] [MainThread]: On master: COMMIT
+[0m19:35:51.475826 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:35:51.476258 [debug] [MainThread]: On master: Close
+[0m19:35:51.478813 [debug] [Thread-1 (]: Began running node seed.mini_lake.members
+[0m19:35:51.479483 [info ] [Thread-1 (]: 1 of 1 START seed file main.members ............................................ [RUN]
+[0m19:35:51.480059 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_mini_lake_main, now seed.mini_lake.members)
+[0m19:35:51.480579 [debug] [Thread-1 (]: Began compiling node seed.mini_lake.members
+[0m19:35:51.481062 [debug] [Thread-1 (]: Began executing node seed.mini_lake.members
+[0m19:35:51.508449 [debug] [Thread-1 (]: Using duckdb connection "seed.mini_lake.members"
+[0m19:35:51.508945 [debug] [Thread-1 (]: On seed.mini_lake.members: BEGIN
+[0m19:35:51.509427 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:35:51.510433 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:35:51.510913 [debug] [Thread-1 (]: Using duckdb connection "seed.mini_lake.members"
+[0m19:35:51.511402 [debug] [Thread-1 (]: On seed.mini_lake.members: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "mini_lake", "target_name": "dev", "node_id": "seed.mini_lake.members"} */
+
+    create table "mini_lake"."main"."members" (member_id integer,joined_date date,plan text,home_gym text)
+  
+[0m19:35:51.513110 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:35:51.524854 [debug] [Thread-1 (]: Using duckdb connection "seed.mini_lake.members"
+[0m19:35:51.525388 [debug] [Thread-1 (]: On seed.mini_lake.members: 
+          COPY "mini_lake"."main"."members" FROM '/workspaces/mini-lake-dbt-duckdb/seeds/members.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m19:35:51.532882 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m19:35:51.539118 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.mini_lake.members"
+[0m19:35:51.553433 [debug] [Thread-1 (]: On seed.mini_lake.members: COMMIT
+[0m19:35:51.553970 [debug] [Thread-1 (]: Using duckdb connection "seed.mini_lake.members"
+[0m19:35:51.554478 [debug] [Thread-1 (]: On seed.mini_lake.members: COMMIT
+[0m19:35:51.557355 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:35:51.559312 [debug] [Thread-1 (]: On seed.mini_lake.members: Close
+[0m19:35:51.561205 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'abeeb024-681f-4def-bd97-9a7d423a97c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70b6be855460>]}
+[0m19:35:51.561936 [info ] [Thread-1 (]: 1 of 1 OK loaded seed file main.members ........................................ [[32mINSERT 4[0m in 0.08s]
+[0m19:35:51.562985 [debug] [Thread-1 (]: Finished running node seed.mini_lake.members
+[0m19:35:51.564720 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:35:51.565192 [debug] [MainThread]: On master: BEGIN
+[0m19:35:51.565769 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:35:51.566527 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m19:35:51.567147 [debug] [MainThread]: On master: COMMIT
+[0m19:35:51.567871 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:35:51.568541 [debug] [MainThread]: On master: COMMIT
+[0m19:35:51.569448 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:35:51.570067 [debug] [MainThread]: On master: Close
+[0m19:35:51.570740 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:35:51.571265 [debug] [MainThread]: Connection 'seed.mini_lake.members' was properly closed.
+[0m19:35:51.571889 [info ] [MainThread]: 
+[0m19:35:51.572443 [info ] [MainThread]: Finished running 1 seed in 0 hours 0 minutes and 0.25 seconds (0.25s).
+[0m19:35:51.573287 [debug] [MainThread]: Command end result
+[0m19:35:51.594159 [debug] [MainThread]: Wrote artifact WritableManifest to /workspaces/mini-lake-dbt-duckdb/target/manifest.json
+[0m19:35:51.595981 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspaces/mini-lake-dbt-duckdb/target/semantic_manifest.json
+[0m19:35:51.601651 [debug] [MainThread]: Wrote artifact RunExecutionResult to /workspaces/mini-lake-dbt-duckdb/target/run_results.json
+[0m19:35:51.602100 [info ] [MainThread]: 
+[0m19:35:51.602640 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:35:51.603095 [info ] [MainThread]: 
+[0m19:35:51.603597 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m19:35:51.604652 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 2.3544397, "process_in_blocks": "7824", "process_kernel_time": 0.268826, "process_mem_max_rss": "176624", "process_out_blocks": "2792", "process_user_time": 3.542716}
+[0m19:35:51.605240 [debug] [MainThread]: Command `dbt seed` succeeded at 19:35:51.605133 after 2.36 seconds
+[0m19:35:51.605739 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70b6be165040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70b6be1675c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70b6be166cc0>]}
+[0m19:35:51.606283 [debug] [MainThread]: Flushing usage events
+[0m19:35:51.983462 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:36:10.749744 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x755033b599d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x755035661880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x755033d39be0>]}
+
+
+============================== 19:36:10.753104 | f88dbd5b-8d4b-4e8d-9d49-e47458414485 ==============================
+[0m19:36:10.753104 [info ] [MainThread]: Running with dbt=1.10.13
+[0m19:36:10.753794 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'target_path': 'None', 'debug': 'False', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'write_json': 'True', 'use_colors': 'True', 'version_check': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'profiles_dir': '/home/codespace/.dbt', 'printer_width': '80', 'cache_selected_only': 'False', 'log_path': '/workspaces/mini-lake-dbt-duckdb/logs', 'log_format': 'default', 'log_cache_events': 'False', 'introspect': 'True', 'static_parser': 'True', 'empty': 'False', 'invocation_command': 'dbt build', 'partial_parse': 'True'}
+[0m19:36:10.994924 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f88dbd5b-8d4b-4e8d-9d49-e47458414485', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x755032b2f0b0>]}
+[0m19:36:11.065842 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f88dbd5b-8d4b-4e8d-9d49-e47458414485', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7550329c9670>]}
+[0m19:36:11.067469 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m19:36:11.167759 [debug] [MainThread]: checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+[0m19:36:11.286153 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:36:11.286671 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:36:11.346037 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f88dbd5b-8d4b-4e8d-9d49-e47458414485', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7550329c9a00>]}
+[0m19:36:11.423210 [debug] [MainThread]: Wrote artifact WritableManifest to /workspaces/mini-lake-dbt-duckdb/target/manifest.json
+[0m19:36:11.424872 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspaces/mini-lake-dbt-duckdb/target/semantic_manifest.json
+[0m19:36:11.452935 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f88dbd5b-8d4b-4e8d-9d49-e47458414485', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75502cb76870>]}
+[0m19:36:11.453551 [info ] [MainThread]: Found 2 models, 1 seed, 4 data tests, 444 macros
+[0m19:36:11.455759 [info ] [MainThread]: 
+[0m19:36:11.456284 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m19:36:11.456762 [info ] [MainThread]: 
+[0m19:36:11.457411 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m19:36:11.463114 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_mini_lake'
+[0m19:36:11.501588 [debug] [ThreadPool]: Using duckdb connection "list_mini_lake"
+[0m19:36:11.502090 [debug] [ThreadPool]: On list_mini_lake: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "mini_lake", "target_name": "dev", "connection_name": "list_mini_lake"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"mini_lake"'
+    
+  
+  
+[0m19:36:11.502574 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:36:11.514608 [debug] [ThreadPool]: SQL status: OK in 0.012 seconds
+[0m19:36:11.516026 [debug] [ThreadPool]: On list_mini_lake: Close
+[0m19:36:11.516916 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_mini_lake, now create_mini_lake_main)
+[0m19:36:11.517519 [debug] [ThreadPool]: Creating schema "database: "mini_lake"
+schema: "main"
+"
+[0m19:36:11.524437 [debug] [ThreadPool]: Using duckdb connection "create_mini_lake_main"
+[0m19:36:11.524925 [debug] [ThreadPool]: On create_mini_lake_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "mini_lake", "target_name": "dev", "connection_name": "create_mini_lake_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='mini_lake'
+        and type='sqlite'
+    
+  
+[0m19:36:11.525385 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:36:11.526400 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m19:36:11.527730 [debug] [ThreadPool]: Using duckdb connection "create_mini_lake_main"
+[0m19:36:11.528180 [debug] [ThreadPool]: On create_mini_lake_main: BEGIN
+[0m19:36:11.528821 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:36:11.529263 [debug] [ThreadPool]: Using duckdb connection "create_mini_lake_main"
+[0m19:36:11.529719 [debug] [ThreadPool]: On create_mini_lake_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "mini_lake", "target_name": "dev", "connection_name": "create_mini_lake_main"} */
+
+    
+    
+        create schema if not exists "mini_lake"."main"
+    
+[0m19:36:11.530397 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:36:11.531319 [debug] [ThreadPool]: On create_mini_lake_main: COMMIT
+[0m19:36:11.531800 [debug] [ThreadPool]: Using duckdb connection "create_mini_lake_main"
+[0m19:36:11.532232 [debug] [ThreadPool]: On create_mini_lake_main: COMMIT
+[0m19:36:11.532920 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:36:11.533393 [debug] [ThreadPool]: On create_mini_lake_main: Close
+[0m19:36:11.534787 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_mini_lake_main, now list_mini_lake_main)
+[0m19:36:11.541227 [debug] [ThreadPool]: Using duckdb connection "list_mini_lake_main"
+[0m19:36:11.541722 [debug] [ThreadPool]: On list_mini_lake_main: BEGIN
+[0m19:36:11.542150 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:36:11.543130 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m19:36:11.543601 [debug] [ThreadPool]: Using duckdb connection "list_mini_lake_main"
+[0m19:36:11.544044 [debug] [ThreadPool]: On list_mini_lake_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "mini_lake", "target_name": "dev", "connection_name": "list_mini_lake_main"} */
+select
+      'mini_lake' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'mini_lake'
+  
+[0m19:36:11.554658 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m19:36:11.555983 [debug] [ThreadPool]: On list_mini_lake_main: ROLLBACK
+[0m19:36:11.557221 [debug] [ThreadPool]: Failed to rollback 'list_mini_lake_main'
+[0m19:36:11.557691 [debug] [ThreadPool]: On list_mini_lake_main: Close
+[0m19:36:11.558773 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f88dbd5b-8d4b-4e8d-9d49-e47458414485', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75502cf71610>]}
+[0m19:36:11.559493 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:36:11.560014 [debug] [MainThread]: On master: BEGIN
+[0m19:36:11.560541 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:36:11.561238 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m19:36:11.561723 [debug] [MainThread]: On master: COMMIT
+[0m19:36:11.562175 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:36:11.562634 [debug] [MainThread]: On master: COMMIT
+[0m19:36:11.563284 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:36:11.563768 [debug] [MainThread]: On master: Close
+[0m19:36:11.566052 [debug] [Thread-1 (]: Began running node seed.mini_lake.members
+[0m19:36:11.566708 [info ] [Thread-1 (]: 1 of 7 START seed file main.members ............................................ [RUN]
+[0m19:36:11.567316 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_mini_lake_main, now seed.mini_lake.members)
+[0m19:36:11.567861 [debug] [Thread-1 (]: Began compiling node seed.mini_lake.members
+[0m19:36:11.568413 [debug] [Thread-1 (]: Began executing node seed.mini_lake.members
+[0m19:36:11.597049 [debug] [Thread-1 (]: Using duckdb connection "seed.mini_lake.members"
+[0m19:36:11.597591 [debug] [Thread-1 (]: On seed.mini_lake.members: BEGIN
+[0m19:36:11.598103 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:36:11.598902 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:36:11.599428 [debug] [Thread-1 (]: Using duckdb connection "seed.mini_lake.members"
+[0m19:36:11.599922 [debug] [Thread-1 (]: On seed.mini_lake.members: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "mini_lake", "target_name": "dev", "node_id": "seed.mini_lake.members"} */
+truncate table "mini_lake"."main"."members"
+[0m19:36:11.601485 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:36:11.613463 [debug] [Thread-1 (]: Using duckdb connection "seed.mini_lake.members"
+[0m19:36:11.613994 [debug] [Thread-1 (]: On seed.mini_lake.members: 
+          COPY "mini_lake"."main"."members" FROM '/workspaces/mini-lake-dbt-duckdb/seeds/members.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m19:36:11.618937 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m19:36:11.624621 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.mini_lake.members"
+[0m19:36:11.635270 [debug] [Thread-1 (]: On seed.mini_lake.members: COMMIT
+[0m19:36:11.635813 [debug] [Thread-1 (]: Using duckdb connection "seed.mini_lake.members"
+[0m19:36:11.636300 [debug] [Thread-1 (]: On seed.mini_lake.members: COMMIT
+[0m19:36:11.644124 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m19:36:11.646094 [debug] [Thread-1 (]: On seed.mini_lake.members: Close
+[0m19:36:11.647979 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f88dbd5b-8d4b-4e8d-9d49-e47458414485', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x755035405280>]}
+[0m19:36:11.648653 [info ] [Thread-1 (]: 1 of 7 OK loaded seed file main.members ........................................ [[32mINSERT 4[0m in 0.08s]
+[0m19:36:11.649555 [debug] [Thread-1 (]: Finished running node seed.mini_lake.members
+[0m19:36:11.650608 [debug] [Thread-1 (]: Began running node model.mini_lake.stg_members
+[0m19:36:11.651370 [info ] [Thread-1 (]: 2 of 7 START sql table model main.stg_members .................................. [RUN]
+[0m19:36:11.652065 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.mini_lake.members, now model.mini_lake.stg_members)
+[0m19:36:11.652670 [debug] [Thread-1 (]: Began compiling node model.mini_lake.stg_members
+[0m19:36:11.660544 [debug] [Thread-1 (]: Writing injected SQL for node "model.mini_lake.stg_members"
+[0m19:36:11.661435 [debug] [Thread-1 (]: Began executing node model.mini_lake.stg_members
+[0m19:36:11.692312 [debug] [Thread-1 (]: Writing runtime sql for node "model.mini_lake.stg_members"
+[0m19:36:11.693132 [debug] [Thread-1 (]: Using duckdb connection "model.mini_lake.stg_members"
+[0m19:36:11.693669 [debug] [Thread-1 (]: On model.mini_lake.stg_members: BEGIN
+[0m19:36:11.694158 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:36:11.694937 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:36:11.695462 [debug] [Thread-1 (]: Using duckdb connection "model.mini_lake.stg_members"
+[0m19:36:11.695968 [debug] [Thread-1 (]: On model.mini_lake.stg_members: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "mini_lake", "target_name": "dev", "node_id": "model.mini_lake.stg_members"} */
+
+  
+    
+    
+
+    create  table
+      "mini_lake"."main"."stg_members__dbt_tmp"
+  
+    as (
+      with src as (select * from "mini_lake"."main"."members")
+select
+  cast(member_id as integer) as member_id,
+  cast(joined_date as date)  as joined_date,
+  upper(trim(plan))          as plan,
+  trim(home_gym)             as home_gym
+from src;
+    );
+  
+  
+[0m19:36:11.806485 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "mini_lake", "target_name": "dev", "node_id": "model.mini_lake.stg_members"} */
+
+  
+    
+    
+
+    create  table
+      "mini_lake"."main"."stg_members__dbt_tmp"
+  
+    as (
+      with src as (select * from "mini_lake"."main"."members")
+select
+  cast(member_id as integer) as member_id,
+  cast(joined_date as date)  as joined_date,
+  upper(trim(plan))          as plan,
+  trim(home_gym)             as home_gym
+from src;
+    );
+  
+  
+[0m19:36:11.807221 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m19:36:11.807991 [debug] [Thread-1 (]: On model.mini_lake.stg_members: ROLLBACK
+[0m19:36:11.815603 [debug] [Thread-1 (]: Failed to rollback 'model.mini_lake.stg_members'
+[0m19:36:11.816179 [debug] [Thread-1 (]: On model.mini_lake.stg_members: Close
+[0m19:36:11.818889 [debug] [Thread-1 (]: Runtime Error in model stg_members (models/staging/stg_members.sql)
+  Parser Error: syntax error at or near ";"
+  
+  LINE 17: from src;
+                   ^
+[0m19:36:11.819559 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f88dbd5b-8d4b-4e8d-9d49-e47458414485', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x755027799b50>]}
+[0m19:36:11.820363 [error] [Thread-1 (]: 2 of 7 ERROR creating sql table model main.stg_members ......................... [[31mERROR[0m in 0.17s]
+[0m19:36:11.821126 [debug] [Thread-1 (]: Finished running node model.mini_lake.stg_members
+[0m19:36:11.821888 [debug] [Thread-4 (]: Marking all children of 'model.mini_lake.stg_members' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_members (models/staging/stg_members.sql)
+  Parser Error: syntax error at or near ";"
+  
+  LINE 17: from src;
+                   ^.
+[0m19:36:11.823532 [debug] [Thread-1 (]: Began running node test.mini_lake.not_null_stg_members_joined_date.190b415eef
+[0m19:36:11.824149 [info ] [Thread-1 (]: 3 of 7 SKIP test not_null_stg_members_joined_date .............................. [[33mSKIP[0m]
+[0m19:36:11.824901 [debug] [Thread-1 (]: Finished running node test.mini_lake.not_null_stg_members_joined_date.190b415eef
+[0m19:36:11.825454 [debug] [Thread-1 (]: Began running node test.mini_lake.not_null_stg_members_member_id.47ab6ecf6d
+[0m19:36:11.825976 [debug] [Thread-4 (]: Marking all children of 'test.mini_lake.not_null_stg_members_joined_date.190b415eef' to be skipped because of status 'skipped'. 
+[0m19:36:11.826586 [info ] [Thread-1 (]: 4 of 7 SKIP test not_null_stg_members_member_id ................................ [[33mSKIP[0m]
+[0m19:36:11.827454 [debug] [Thread-1 (]: Finished running node test.mini_lake.not_null_stg_members_member_id.47ab6ecf6d
+[0m19:36:11.828036 [debug] [Thread-1 (]: Began running node test.mini_lake.unique_stg_members_member_id.a9c0f83067
+[0m19:36:11.828556 [debug] [Thread-4 (]: Marking all children of 'test.mini_lake.not_null_stg_members_member_id.47ab6ecf6d' to be skipped because of status 'skipped'. 
+[0m19:36:11.829065 [info ] [Thread-1 (]: 5 of 7 SKIP test unique_stg_members_member_id .................................. [[33mSKIP[0m]
+[0m19:36:11.829785 [debug] [Thread-1 (]: Finished running node test.mini_lake.unique_stg_members_member_id.a9c0f83067
+[0m19:36:11.830263 [debug] [Thread-4 (]: Marking all children of 'test.mini_lake.unique_stg_members_member_id.a9c0f83067' to be skipped because of status 'skipped'. 
+[0m19:36:11.831006 [debug] [Thread-1 (]: Began running node model.mini_lake.dim_members
+[0m19:36:11.831581 [info ] [Thread-1 (]: 6 of 7 SKIP relation main.dim_members .......................................... [[33mSKIP[0m]
+[0m19:36:11.832221 [debug] [Thread-1 (]: Finished running node model.mini_lake.dim_members
+[0m19:36:11.832748 [debug] [Thread-4 (]: Marking all children of 'model.mini_lake.dim_members' to be skipped because of status 'skipped'. 
+[0m19:36:11.833644 [debug] [Thread-1 (]: Began running node test.mini_lake.not_null_dim_members_join_month.654865b5c8
+[0m19:36:11.834176 [info ] [Thread-1 (]: 7 of 7 SKIP test not_null_dim_members_join_month ............................... [[33mSKIP[0m]
+[0m19:36:11.834735 [debug] [Thread-1 (]: Finished running node test.mini_lake.not_null_dim_members_join_month.654865b5c8
+[0m19:36:11.835216 [debug] [Thread-4 (]: Marking all children of 'test.mini_lake.not_null_dim_members_join_month.654865b5c8' to be skipped because of status 'skipped'. 
+[0m19:36:11.836467 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:36:11.837024 [debug] [MainThread]: On master: BEGIN
+[0m19:36:11.837506 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:36:11.838664 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m19:36:11.839157 [debug] [MainThread]: On master: COMMIT
+[0m19:36:11.839734 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:36:11.840178 [debug] [MainThread]: On master: COMMIT
+[0m19:36:11.840846 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:36:11.841302 [debug] [MainThread]: On master: Close
+[0m19:36:11.841875 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:36:11.842297 [debug] [MainThread]: Connection 'model.mini_lake.stg_members' was properly closed.
+[0m19:36:11.842829 [info ] [MainThread]: 
+[0m19:36:11.843424 [info ] [MainThread]: Finished running 1 seed, 2 table models, 4 data tests in 0 hours 0 minutes and 0.39 seconds (0.39s).
+[0m19:36:11.844583 [debug] [MainThread]: Command end result
+[0m19:36:11.865215 [debug] [MainThread]: Wrote artifact WritableManifest to /workspaces/mini-lake-dbt-duckdb/target/manifest.json
+[0m19:36:11.867771 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspaces/mini-lake-dbt-duckdb/target/semantic_manifest.json
+[0m19:36:11.874864 [debug] [MainThread]: Wrote artifact RunExecutionResult to /workspaces/mini-lake-dbt-duckdb/target/run_results.json
+[0m19:36:11.875354 [info ] [MainThread]: 
+[0m19:36:11.875903 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m19:36:11.876405 [info ] [MainThread]: 
+[0m19:36:11.876965 [error] [MainThread]: [31mFailure in model stg_members (models/staging/stg_members.sql)[0m
+[0m19:36:11.877526 [error] [MainThread]:   Runtime Error in model stg_members (models/staging/stg_members.sql)
+  Parser Error: syntax error at or near ";"
+  
+  LINE 17: from src;
+                   ^
+[0m19:36:11.877986 [info ] [MainThread]: 
+[0m19:36:11.878550 [info ] [MainThread]:   compiled code at target/compiled/mini_lake/models/staging/stg_members.sql
+[0m19:36:11.879007 [info ] [MainThread]: 
+[0m19:36:11.879537 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=1 SKIP=5 NO-OP=0 TOTAL=7
+[0m19:36:11.880629 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 1.1916257, "process_in_blocks": "5424", "process_kernel_time": 0.27069, "process_mem_max_rss": "176328", "process_out_blocks": "1920", "process_user_time": 2.278391}
+[0m19:36:11.881238 [debug] [MainThread]: Command `dbt build` failed at 19:36:11.881108 after 1.19 seconds
+[0m19:36:11.881800 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7550333d6390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7550339cc3e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x755033b599d0>]}
+[0m19:36:11.882406 [debug] [MainThread]: Flushing usage events
+[0m19:36:12.222514 [debug] [MainThread]: An error was encountered while trying to flush usage events

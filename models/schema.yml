@@ -1,0 +1,12 @@
+version: 2
+models:
+  - name: stg_members
+    columns:
+      - name: member_id
+        data_tests: [unique, not_null]
+      - name: joined_date
+        data_tests: [not_null]
+  - name: dim_members
+    columns:
+      - name: join_month
+        data_tests: [not_null]

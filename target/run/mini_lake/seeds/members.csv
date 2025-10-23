@@ -1,0 +1,11 @@
+
+    
+    
+    truncate table "mini_lake"."main"."members";
+    -- dbt seed --
+    
+          COPY "mini_lake"."main"."members" FROM '/workspaces/mini-lake-dbt-duckdb/seeds/members.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  
