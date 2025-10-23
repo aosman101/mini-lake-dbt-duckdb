@@ -34,10 +34,15 @@ A straightforward, cost-free data engineering project demonstrating local ETL an
 # Yaml
 
 mini_lake:
+
   target: dev
+  
   outputs:
+  
     dev:
+    
       type: duckdb
+      
       path: "./mini_lake.duckdb"
 
 ## Project Structure
