@@ -1,0 +1,38 @@
+name: "mini_lake"
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  validate-db-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Restore dbt_project.yml
+        run: |
+          cat > dbt_project.yml <<'DBT'
+          name: "mini_lake"
+          version: "1.0.0"
+          profile: "mini_lake"
+
+          model-paths: ["models"]
+          seed-paths: ["seeds"]
+          test-paths: ["tests"]
+
+          models:
+            mini_lake:
+              +materialized: table
+
+          seeds:
+            mini_lake:
+              +header: true
+              +quote_columns: false
+          DBT
+
+      - name: Show dbt_project.yml
+        run: |
+          echo "Restored dbt_project.yml contents:"
+          sed -n '1,200p' dbt_project.yml
