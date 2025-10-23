@@ -17,28 +17,21 @@ Mini Lake is a laptop-based data engineering pipeline designed to ingest raw CSV
 
 A straightforward, cost-free data engineering project demonstrating local ETL and modelling with **DuckDB + dbt**. It's ideal for learning dbt patterns (staging, marts, tests, docs) without incurring cloud expenses. (See the dbt+DuckDB quickstart for further information.)
 
+
 ## Features
 
 - A local DuckDB file can serve as a lightweight data lake or warehouse.  
 - dbt models: staging to marts, including dbt tests.  
 - CI workflow using GitHub Actions that runs `dbt build` on push or PR.  
 - Minimal sample data in CSV format so the project can run on any laptop.
+
+  
 ## Tech stack
 
 - dbt Core with the dbt-duckdb adapter. 
 - DuckDB (local .duckdb file). 
 - Badges available through Shields.io.
 
-## How to create this file (~/dbt/profiles.yml).
-
-# Yaml
-
-mini_lake:
-  target: dev
-  outputs:
-    dev:
-      type: duckdb
-      path: "./mini_lake.duckdb"
 
 ## Project Structure
 
@@ -57,3 +50,36 @@ mini-lake-dbt-duckdb/
   ├─ .github/workflows/ci.yml
   
   └─ README.md
+
+
+## How to create this file (~/dbt/profiles.yml).
+
+# Yaml
+
+mini_lake:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "./mini_lake.duckdb"
+      
+
+## Quickstart
+
+# bash
+python -m venv .venv && source .venv/bin/activate
+
+python -m pip install --upgrade pip
+
+python -m pip install dbt-core dbt-duckdb
+
+# Please set up the file located at ~/.dbt/profiles.yml. Refer to the snippet below for guidance.
+
+dbt seed
+
+dbt run
+
+dbt test
+
+dbt docs generate
+
