@@ -15,20 +15,20 @@ Mini Lake is a laptop-based data engineering pipeline designed to ingest raw CSV
 
 ## About
 
-A straightforward, cost-free data engineering project demonstrating local ETL and modelling with **DuckDB + dbt**. It's ideal for learning dbt patterns (staging, marts, tests, docs) without incurring cloud expenses. (See the dbt+DuckDB quickstart for further information.)
+A straightforward, cost-free data engineering project demonstrating local ETL and modelling with **DuckDB + dbt**. It's ideal for learning dbt patterns (staging, marts, tests, docs) without incurring cloud expenses. (See the dbt+DuckDB quickstart for further information).
 
 
 ## Features
 
-- A local DuckDB file can serve as a lightweight data lake or warehouse.  
+- A local DuckDB file can function as a lightweight data lake or data warehouse.  
 - dbt models: staging to marts, including dbt tests.  
-- CI workflow using GitHub Actions that runs `dbt build` on push or PR.  
-- Minimal sample data in CSV format so the project can run on any laptop.
+- A CI workflow using GitHub Actions is designed to run `dbt build` whenever there is a push or a pull request.  
+-A minimal sample dataset in CSV format is provided so that the project can run on any laptop..
 
   
 ## Tech stack
 
-- dbt Core with the dbt-duckdb adapter. 
+- Using dbt Core with the dbt-duckdb adapter.. 
 - DuckDB (local .duckdb file). 
 - Badges available through Shields.io.
 
