@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+.venv/
+*.pyc
+
+# dbt
+target/
+logs/
+dbt_packages/
+dbt_modules/
+*.duckdb
