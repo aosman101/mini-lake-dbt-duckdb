@@ -23,12 +23,12 @@ A straightforward, cost-free data engineering project demonstrating local ETL an
 - A local DuckDB file can function as a lightweight data lake or data warehouse.  
 - dbt models: staging to marts, including dbt tests.  
 - A CI workflow using GitHub Actions is designed to run `dbt build` whenever there is a push or a pull request.  
--A minimal sample dataset in CSV format is provided so that the project can run on any laptop..
+-A minimal sample dataset in CSV format is provided so that the project can run on any laptop.
 
   
 ## Tech stack
 
-- Using dbt Core with the dbt-duckdb adapter.. 
+- Using dbt Core with the dbt-duckdb adapter.
 - DuckDB (local .duckdb file). 
 - Badges available through Shields.io.
 
@@ -66,14 +66,14 @@ mini_lake:
 
 ## Quickstart
 
-# bash
+# Bash
 python -m venv .venv && source .venv/bin/activate
 
 python -m pip install --upgrade pip
 
 python -m pip install dbt-core dbt-duckdb
 
-# Please set up the file located at ~/.dbt/profiles.yml. Refer to the snippet below for guidance.
+# Please configure the file found at ~/.dbt/profiles.yml as shown below.
 
 dbt seed
 
