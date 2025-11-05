@@ -1,0 +1,7 @@
+mini_lake:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: data/mini_lake.duckdb   # relative path inside the project; file will be created as needed
+      threads: 4

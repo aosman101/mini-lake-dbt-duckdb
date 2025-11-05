@@ -1,0 +1,36 @@
+
+name: mini_lake
+version: '1.0'
+config-version: 2
+profile: mini_lake
+
+model-paths: ["models"]
+data-paths: ["data"]
+macro-paths: ["macros"]
+target-path: "target"
+clean-targets: ["target"]
+
+seeds:
+  +schema: seed_data
+  +quote_columns: false
+  mini_lake:
+    orders:
+      +column_types:
+        order_id: integer
+        order_date: date
+        customer_id: integer
+        country: varchar
+        state: varchar
+        city: varchar
+        product_category: varchar
+        product_id: integer
+        quantity: integer
+        unit_price: double
+        discount: double
+        total_amount: double
+        payment_method: varchar
+        is_first_purchase: boolean
+        channel: varchar
+        status: varchar
+        ship_date: date
+        shipping_cost: double

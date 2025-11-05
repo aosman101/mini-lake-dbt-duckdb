@@ -1,0 +1,19 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# dbt
+target/
+dbt_packages/
+
+# DuckDB database files (generated locally)
+*.duckdb
+
+# OS/editor
+.DS_Store
+.vscode/
+
+# Optional: dbt ignore file
+.dbtignore
+
