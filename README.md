@@ -51,7 +51,9 @@ mini-lake-dbt-duckdb/
 # 1 — Clone the repository and create a virtual environment.
 
 bash
+
 git clone https://github.com/<your-username>/mini-lake-dbt-duckdb.git
+
 cd mini-lake-dbt-duckdb
 
 # Create & activate venv
@@ -74,6 +76,7 @@ python -m pip install dbt-core dbt-duckdb duckdb
 # Seed, build, test, and document.
 
 cd mini_lake
+
 # load seeds
 
 dbt seed
