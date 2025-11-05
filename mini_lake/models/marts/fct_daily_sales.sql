@@ -10,6 +10,7 @@ select
   sum(total_amount - shipping_cost) as net_revenue
   
 from {{ ref('stg_orders') }}
+
 where status in ('shipped', 'completed')
 group by 1
 order by 1

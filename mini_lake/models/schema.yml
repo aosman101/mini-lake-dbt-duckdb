@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['completed', 'shipped', 'processing', 'cancelled', 'returned']
+
+  - name: fct_daily_sales
+    columns:
+      - name: order_date
+        tests:
+          - not_null
