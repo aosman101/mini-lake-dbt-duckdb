@@ -24,8 +24,25 @@ jobs:
           # ensure duckdb Python package is available for the creation step
           python -m pip install duckdb
 
-      - name: Create CI DuckDB file
+      - name: Verify duckdb availability
         run: |
+          python - <<'PY'
+          import duckdb, sys
+          try:
+              print('duckdb import OK, version=', duckdb.__version__)
+          except Exception as e:
+              print('duckdb import failed:', e)
+              sys.exit(1)
+          PY
+
+      - name: Create CI DuckDB file (verbose)
+        run: |
+          set -eux
+          echo "PWD: $(pwd)"
+          echo "Listing repo root:"
+          ls -la
+          mkdir -p mini_lake/data
+          echo "Creating mini_lake/data/ci.duckdb via python"
           python - <<'PY'
           import duckdb, os
           os.makedirs('mini_lake/data', exist_ok=True)
@@ -35,11 +52,26 @@ jobs:
           con.close()
           print('Created mini_lake/data/ci.duckdb')
           PY
+          echo "Listing mini_lake and data directory after create:"
+          ls -la mini_lake || true
+          ls -la mini_lake/data || true
 
-      - name: Provide dbt profile (DuckDB)
+      - name: Provide dbt profile (DuckDB) with absolute path
         run: |
           mkdir -p .ci
-          printf '%s\n' "mini_lake:" "  target: dev" "  outputs:" "    dev:" "      type: duckdb" "      path: data/ci.duckdb" "      threads: 4" > .ci/profiles.yml
+          # Use absolute path to the DB file so dbt can always find it regardless of cwd
+          DB_PATH="$GITHUB_WORKSPACE/mini_lake/data/ci.duckdb"
+          echo "Using DB path: $DB_PATH"
+          cat > .ci/profiles.yml <<YML
+mini_lake:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "$DB_PATH"
+      threads: 4
+YML
+          echo "Wrote .ci/profiles.yml:" && sed -n '1,240p' .ci/profiles.yml
         shell: bash
 
       - name: dbt build
