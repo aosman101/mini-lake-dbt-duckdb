@@ -1,0 +1,35 @@
+name: dbt build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install dbt-core dbt-duckdb
+
+      - name: Provide dbt profile (DuckDB)
+        run: |
+          mkdir -p .ci
+          printf '%s\n' "mini_lake:" "  target: dev" "  outputs:" "    dev:" "      type: duckdb" "      path: data/ci.duckdb" "      threads: 4" > .ci/profiles.yml
+        shell: bash
+
+      - name: dbt build
+        run: |
+          cd mini_lake
+          dbt deps || true   # not needed now, but harmless
+          dbt build --profiles-dir ../.ci
