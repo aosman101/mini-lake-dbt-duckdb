@@ -59,18 +59,9 @@ jobs:
       - name: Provide dbt profile (DuckDB) with absolute path
         run: |
           mkdir -p .ci
-          # Use absolute path to the DB file so dbt can always find it regardless of cwd
           DB_PATH="$GITHUB_WORKSPACE/mini_lake/data/ci.duckdb"
           echo "Using DB path: $DB_PATH"
-          cat > .ci/profiles.yml <<YML
-mini_lake:
-  target: dev
-  outputs:
-    dev:
-      type: duckdb
-      path: "$DB_PATH"
-      threads: 4
-YML
+          printf '%s\n' "mini_lake:" "  target: dev" "  outputs:" "    dev:" "      type: duckdb" "      path: \"$DB_PATH\"" "      threads: 4" > .ci/profiles.yml
           echo "Wrote .ci/profiles.yml:" && sed -n '1,240p' .ci/profiles.yml
         shell: bash
 
