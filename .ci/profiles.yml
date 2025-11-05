@@ -1,0 +1,7 @@
+mini_lake:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: data/ci.duckdb
+      threads: 4

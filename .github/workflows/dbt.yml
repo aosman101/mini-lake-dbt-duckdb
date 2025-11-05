@@ -22,6 +22,18 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install dbt-core dbt-duckdb
 
+      - name: Create CI DuckDB file
+        run: |
+          python - <<'PY'
+          import duckdb, os
+          os.makedirs('mini_lake/data', exist_ok=True)
+          con = duckdb.connect('mini_lake/data/ci.duckdb')
+          con.execute("CREATE TABLE IF NOT EXISTS _init(x INT);")
+          con.execute("INSERT INTO _init VALUES (1);")
+          con.close()
+          print('Created mini_lake/data/ci.duckdb')
+          PY
+
       - name: Provide dbt profile (DuckDB)
         run: |
           mkdir -p .ci
