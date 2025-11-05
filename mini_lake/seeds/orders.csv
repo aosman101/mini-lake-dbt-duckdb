@@ -1,0 +1,52 @@
+order_id,order_date,customer_id,country,state,city,product_category,product_id,quantity,unit_price,discount,total_amount,payment_method,is_first_purchase,channel,status,ship_date,shipping_cost
+100000,2024-02-29,1113,IN,DL,Delhi,beauty,593,3,68.92,0.2,165.41,paypal,False,web,shipped,2024-03-02,14.3
+100001,2025-06-02,1651,IN,TN,Chennai,sports,879,2,409.1,0.0,818.2,paypal,False,store,shipped,2025-06-05,9.41
+100002,2025-03-14,1962,DE,BY,Nuremberg,apparel,606,2,359.94,0.05,683.89,bank_transfer,False,store,shipped,2025-03-19,14.52
+100003,2024-10-21,1867,BR,SP,Santos,apparel,144,9,380.36,0.05,3252.08,paypal,False,mobile,completed,2024-10-25,20.4
+100004,2024-10-17,1274,US,CA,Sacramento,beauty,525,6,199.06,0.0,1194.36,debit_card,False,web,completed,2024-10-18,21.53
+100005,2025-07-29,1453,BR,RJ,Petropolis,home,841,3,427.83,0.2,1026.79,paypal,False,marketplace,processing,2025-07-30,20.47
+100006,2024-02-27,1531,IN,GJ,Surat,home,688,4,209.94,0.0,839.76,cash,True,web,shipped,2024-02-29,11.39
+100007,2025-04-12,1247,DE,BE,Berlin,beauty,219,3,287.4,0.25,646.65,debit_card,False,marketplace,completed,2025-04-19,2.97
+100008,2024-05-14,1268,IN,DL,New Delhi,home,288,9,5.32,0.15,40.7,credit_card,False,mobile,completed,2024-05-21,14.23
+100009,2024-03-04,1236,DE,SN,Chemnitz,beauty,868,7,324.21,0.25,1702.1,cash,False,marketplace,processing,2024-03-07,3.91
+100010,2024-12-18,1994,CA,QC,Montreal,apparel,980,9,360.5,0.1,2920.05,credit_card,True,mobile,shipped,2024-12-25,1.52
+100011,2025-10-15,1746,IN,KA,Mangaluru,sports,776,4,285.72,0.0,1142.88,bank_transfer,False,store,processing,2025-10-16,12.47
+100012,2025-05-07,1840,CA,QC,Montreal,electronics,188,5,250.8,0.05,1191.3,cash,False,store,shipped,2025-05-14,16.38
+100013,2025-05-24,1816,UK,England,Manchester,sports,656,2,405.92,0.2,649.47,debit_card,True,mobile,completed,2025-05-26,21.35
+100014,2025-04-25,1959,DE,HE,Darmstadt,home,845,10,342.28,0.25,2567.1,debit_card,False,web,completed,2025-04-26,19.57
+100015,2025-06-10,1105,IN,TN,Coimbatore,electronics,675,6,142.65,0.05,813.1,debit_card,False,store,completed,2025-06-16,21.43
+100016,2024-12-09,1881,UK,England,Birmingham,beauty,634,6,479.74,0.1,2590.6,credit_card,False,store,shipped,2024-12-12,19.0
+100017,2024-03-26,1066,DE,SN,Dresden,toys,520,5,355.1,0.3,1242.85,credit_card,False,mobile,shipped,2024-03-29,17.58
+100018,2025-07-16,1475,US,FL,Orlando,sports,320,3,494.03,0.25,1111.57,credit_card,False,marketplace,completed,2025-07-22,0.25
+100019,2024-10-28,1594,US,MA,Worcester,electronics,352,10,485.77,0.1,4371.93,paypal,True,store,processing,2024-10-31,15.65
+100020,2024-12-01,1357,US,IL,Springfield,electronics,770,5,459.86,0.05,2184.34,paypal,True,web,completed,2024-12-07,3.01
+100021,2024-09-05,1146,US,FL,Tampa,toys,162,7,378.91,0.1,2387.13,credit_card,False,marketplace,completed,2024-09-07,1.47
+100022,2024-05-02,1192,BR,RS,Caxias do Sul,sports,175,1,306.67,0.15,260.67,cash,False,web,completed,2024-05-03,3.91
+100023,2025-09-12,1824,IN,TN,Madurai,apparel,456,3,90.22,0.15,230.06,bank_transfer,False,store,processing,2025-09-15,20.58
+100024,2025-06-07,1318,IN,TN,Coimbatore,beauty,796,9,273.96,0.05,2342.36,credit_card,False,mobile,cancelled,2025-06-12,18.6
+100025,2025-03-07,1310,US,MA,Worcester,sports,690,1,383.86,0.0,383.86,cash,False,store,shipped,2025-03-09,23.72
+100026,2024-09-26,1923,US,CA,Los Angeles,sports,630,2,262.82,0.15,446.79,credit_card,True,marketplace,returned,2024-09-28,24.47
+100027,2025-07-05,1143,CA,AB,Calgary,toys,580,9,434.78,0.25,2934.76,paypal,False,store,processing,2025-07-11,22.33
+100028,2024-12-31,1915,DE,SN,Dresden,beauty,199,4,59.28,0.05,225.26,paypal,False,store,processing,2025-01-04,3.32
+100029,2024-10-24,1920,UK,N. Ireland,Lisburn,toys,398,3,193.57,0.1,522.64,paypal,False,marketplace,processing,2024-10-28,21.96
+100030,2024-10-28,1598,DE,HE,Frankfurt,beauty,171,6,255.45,0.05,1456.06,cash,False,store,completed,2024-10-30,20.97
+100031,2024-06-01,1165,CA,QC,Montreal,toys,781,2,219.0,0.05,416.1,cash,False,marketplace,shipped,2024-06-02,21.78
+100032,2024-03-02,1155,IN,MH,Nagpur,toys,775,1,58.75,0.2,47.0,debit_card,False,mobile,shipped,2024-03-03,3.79
+100033,2025-01-06,1284,UK,N. Ireland,Derry,apparel,332,1,81.0,0.1,72.9,paypal,False,web,shipped,2025-01-11,2.92
+100034,2025-08-17,1577,US,CA,Los Angeles,toys,363,1,419.62,0.05,398.64,cash,False,web,completed,2025-08-18,23.1
+100035,2024-02-12,1153,IN,GJ,Ahmedabad,beauty,385,2,244.77,0.3,342.68,bank_transfer,False,store,shipped,2024-02-14,4.35
+100036,2025-07-29,1455,BR,MG,Belo Horizonte,sports,899,7,29.12,0.05,193.65,cash,False,store,returned,2025-08-05,9.22
+100037,2025-07-08,1115,US,FL,Tampa,toys,539,3,13.16,0.05,37.51,paypal,False,web,completed,2025-07-11,11.4
+100038,2024-07-04,1540,DE,BY,Nuremberg,electronics,785,1,239.37,0.3,167.56,debit_card,False,web,returned,2024-07-10,3.11
+100039,2025-02-27,1021,IN,DL,New Delhi,toys,503,1,86.37,0.15,73.41,paypal,False,marketplace,completed,2025-03-02,0.52
+100040,2024-04-20,1709,AU,WA,Perth,home,727,5,354.04,0.0,1770.2,cash,False,store,completed,2024-04-27,24.85
+100041,2025-05-22,1055,IN,DL,Delhi,electronics,574,9,398.69,0.1,3229.39,cash,True,marketplace,completed,2025-05-28,21.92
+100042,2025-04-14,1194,UK,N. Ireland,Belfast,electronics,350,4,118.01,0.15,401.23,bank_transfer,False,web,shipped,2025-04-18,22.81
+100043,2024-08-25,1174,UK,Scotland,Glasgow,toys,887,1,298.13,0.05,283.22,bank_transfer,False,web,shipped,2024-08-30,7.11
+100044,2024-02-15,1830,AU,WA,Fremantle,sports,737,3,81.45,0.15,207.7,paypal,True,mobile,completed,2024-02-18,5.5
+100045,2025-10-12,1053,CA,ON,Mississauga,toys,791,5,155.27,0.2,621.08,debit_card,False,marketplace,shipped,2025-10-19,10.65
+100046,2024-10-25,1429,CA,AB,Edmonton,apparel,952,2,444.95,0.05,845.4,paypal,True,store,completed,2024-10-28,11.33
+100047,2025-08-21,1591,AU,NSW,Wollongong,electronics,323,10,274.33,0.25,2057.48,paypal,True,marketplace,completed,2025-08-27,0.14
+100048,2025-03-30,1515,AU,QLD,Gold Coast,beauty,182,8,443.51,0.15,3015.87,cash,False,mobile,processing,2025-04-04,19.48
+100049,2025-06-05,1680,US,IL,Chicago,electronics,623,4,116.5,0.3,326.2,paypal,False,mobile,shipped,2025-06-10,24.92
+100050,2025-05-24,1803,DE,BY,Augsburg,sports,393,10,168.36,0.0,1683.6,bank_transfer,False,store,shipped,2025-05-27,13.22

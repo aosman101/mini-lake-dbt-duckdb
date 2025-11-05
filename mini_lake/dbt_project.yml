@@ -5,7 +5,7 @@ config-version: 2
 profile: mini_lake
 
 model-paths: ["models"]
-data-paths: ["data"]
+seed-paths: ["seeds"]
 macro-paths: ["macros"]
 target-path: "target"
 clean-targets: ["target"]

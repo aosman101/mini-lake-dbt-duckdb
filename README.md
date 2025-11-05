@@ -71,6 +71,7 @@ source .venv/bin/activate
 # Install dbt + DuckDB adapter
 
 python -m pip install --upgrade pip
+
 python -m pip install dbt-core dbt-duckdb duckdb
 
 # Seed, build, test, and document.
@@ -88,4 +89,5 @@ dbt build
 # Create and provide interactive documents.
 
 dbt docs generate
+
 dbt docs serve
