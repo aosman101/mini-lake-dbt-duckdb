@@ -12,10 +12,10 @@ A portable, local-first mini lakehouse using **dbt + DuckDB**: seeds, staging, m
 ## ⚡ Features
 
 - Lightweight local-first analytics with **DuckDB** and **dbt Core**  
-- Versioned CSV seeds for deterministic test data (`dbt seed`):contentReference[oaicite:0]{index=0}  
+- Versioned CSV seeds for deterministic test data (`dbt seed`)
 - Clean staging models & mart/fact tables (star schema example)  
-- Schema tests + basic CI (GitHub Actions) to keep data quality high:contentReference[oaicite:1]{index=1}  
-- Auto-generated docs you can `dbt docs generate` and serve locally. :contentReference[oaicite:2]{index=2}
+- Schema tests + basic CI (GitHub Actions) to keep data quality high
+- Auto-generated docs you can `dbt docs generate` and serve locally.
 
 ---
 ## Project Structure
@@ -70,8 +70,8 @@ python -m pip install --upgrade pip
 python -m pip install dbt-core dbt-duckdb duckdb
 
 # 4. Place seeds & config (already provided)
-# seeds: mini_lake/seeds/orders.csv
-# ensure your ~/.dbt/profiles.yml points to the project profile (see Profiles below)
+seeds: mini_lake/seeds/orders.csv
+ensure your ~/.dbt/profiles.yml points to the project profile (see Profiles below)
 
 # 5. Quick run
 cd mini_lake
@@ -81,4 +81,4 @@ dbt seed
 dbt build      # runs models + tests
 
 dbt docs generate
-dbt docs serve # view docs at http://localhost:8080
+dbt docs serve   #You can view the documentation at http://localhost:8080.
