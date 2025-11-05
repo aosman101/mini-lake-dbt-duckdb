@@ -1,10 +1,5 @@
 # mini-lake-dbt-duckdb
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/<your-username>/mini-lake-dbt-duckdb/dbt.yml?branch=main)](https://github.com/<your-username>/mini-lake-dbt-duckdb/actions)
-[![License](https://img.shields.io/github/license/<your-username>/mini-lake-dbt-duckdb)](./LICENSE)
-[![dbt](https://img.shields.io/badge/dbt-compatible-1.8%2B-informational)](https://docs.getdbt.com/)
-[![DuckDB](https://img.shields.io/badge/DuckDB-local-first-brightgreen)](https://duckdb.org/)
-
 **Portable, local-first mini lakehouse** utilising **dbt Core + DuckDB**. It features versioned CSV seeds, models from staging to marts, schema tests, documentation, and an example of GitHub Actions CI — ideal for learning, prototyping, and portfolio demonstrations.
 
 ---
@@ -53,19 +48,23 @@ mini-lake-dbt-duckdb/
 
 ## QuickStart
 
-## 1 — clone & virtualenv
+# 1 — Clone the repository and create a virtual environment.
+
 bash
 git clone https://github.com/<your-username>/mini-lake-dbt-duckdb.git
 cd mini-lake-dbt-duckdb
 
-# create & activate venv
+# Create & activate venv
+
 python -m venv .venv
 
-# macOS/Linux
+# MacOS/Linux
+
 source .venv/bin/activate
 
 # Windows (PowerShell)
-# .\.venv\Scripts\Activate.ps1
+
+.\.venv\Scripts\Activate.ps1
 
 # Install dbt + DuckDB adapter
 
@@ -76,11 +75,14 @@ python -m pip install dbt-core dbt-duckdb duckdb
 
 cd mini_lake
 # load seeds
+
 dbt seed
 
-# build models + tests (or run individual commands)
+# Create models and conduct tests, or run individual commands.
+
 dbt build
 
-# generate & serve docs (interactive)
+# Create and provide interactive documents.
+
 dbt docs generate
 dbt docs serve
