@@ -47,15 +47,15 @@ mini-lake-dbt-duckdb/
     - schema.yml
   - seeds/
     - orders.csv
-- RUNNING_DBT.md             — tips for running locally and troubleshooting
+- RUNNING_DBT.md             — tips for running locally and troubleshooting.
 - LICENSE
 
 ## Quick start — run locally (interactive)
 
-These commands get you up and running in a local dev environment. Run them from the repository root.
+These commands help you get up and running in a local development environment. Run them from the repository root.
 
 ```bash
-# create & activate a python venv (Unix)
+# create & activate a Python venv (Unix)
 python -m venv .venv
 source .venv/bin/activate
 
@@ -82,7 +82,7 @@ If you prefer to run dbt from the repo root, use the `--project-dir` flag or the
 
 ## Continuous Integration (GitHub Actions)
 
-This repo includes a `dbt build` workflow at `.github/workflows/dbt.yml`. It:
+This repository includes a `dbt build` workflow, located at `.github/workflows/dbt.yml`. It:
 
 - sets up Python 3.12
 - installs `dbt-core` and `dbt-duckdb`
@@ -95,7 +95,7 @@ To run the same steps locally, create a small venv and invoke `dbt build --profi
 
 - If dbt cannot find `dbt_project.yml`, ensure you are in `mini_lake` or use `--project-dir`.
 - Avoid setting `DBT_PROJECT_DIR` to a relative path in shell startup files — prefer absolute paths. See `RUNNING_DBT.md` for details.
-- If paths look wrong after moving files, clear compiled artifacts and re-run:
+- If paths look wrong after moving files, clear compiled artefacts and re-run:
 
 ```bash
 rm -rf mini_lake/target
@@ -105,21 +105,17 @@ dbt build --project-dir mini_lake
 
 ## Tests (what CI runs)
 
-CI builds the project and runs all schema/data tests declared under `mini_lake/models/schema.yml`. Locally you can replicate this with `dbt build` after seeding.
+CI builds the project and runs all schema/data tests declared under `mini_lake/models/schema.yml`. Locally, you can replicate this with `dbt build` after seeding.
 
 ## License
 
 This project is licensed under the terms in the `LICENSE` file in the repository root. Briefly:
 
-- You are free to use, modify, and share this project for personal, educational, or commercial purposes subject to the license terms.
+- You are free to use, modify, and share this project for personal, educational, or commercial purposes, subject to the license terms.
 
-If you want a different license (MIT/Apache/BSD), tell me and I can update the `LICENSE` file and add badges.
+If you would like a different license (MIT/Apache/BSD), please let me know, and I can update the `LICENSE` file and add the corresponding badges.
 
 ## Contributing & contact
 
 - Found a bug or want a feature? Open an issue or submit a PR against `main`.
 - For quick help: run `dbt debug` inside `mini_lake` (after activating your venv).
-
----
-
-Thanks for building this — if you'd like, I can add a project badge, a demo GIF, or a one-click Codespace devcontainer next.
