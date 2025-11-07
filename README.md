@@ -6,8 +6,8 @@
 
 ## What this project demonstrates (detailed)
 
-- **Local-first reproducible analytics**: use DuckDB files for fast local analytics and dbt for model-driven transformations.
-- **Seed-driven testing**: versioned CSV seeds provide deterministic datasets for CI and demos (`dbt seed`).
+- **Local-first reproducible analytics**: Utilise DuckDB files for efficient local analytics and employ dbt for model-driven transformations.
+- **Seed-driven testing**: Versioned CSV seed files offer consistent datasets for continuous integration and demonstrations (`dbt seed`).
 - **Layered architecture**:
   - *Seeds*: small, versioned CSVs (source of truth for demos).
   - *Staging*: `stg_` models to clean and type source data.
@@ -15,14 +15,11 @@
 - **Data quality**: dbt schema tests (`not_null`, `unique`, `accepted_values`) — fast feedback loop during development and in CI.
 - **Docs & lineage**: `dbt docs generate` + `dbt docs serve` produce an interactive website with lineage graphs and column docs.
 
-## Project structure
-
-mini-lake-dbt-duckdb/
  # mini-lake-dbt-duckdb
 
 [![dbt build](https://github.com/aosman101/mini-lake-dbt-duckdb/actions/workflows/dbt.yml/badge.svg)](https://github.com/aosman101/mini-lake-dbt-duckdb/actions/workflows/dbt.yml)
 
-Portable, local-first mini lakehouse built with dbt Core and DuckDB. This repository demonstrates a compact, reproducible analytics workflow using versioned CSV seeds, staging models, marts (aggregations), and dbt schema tests — ideal for learning, demos, and portfolio pieces.
+Compact, local-first mini lakehouse designed with dbt Core and DuckDB. This repository showcases a reproducible analytics workflow using versioned CSV seeds, staging models, marts (aggregations), and dbt schema tests—perfect for learning, demonstrations, and portfolio projects.
 
 ---
 
@@ -58,6 +55,7 @@ These commands help you get up and running in a local development environment. R
 # create & activate a Python venv (Unix)
 python -m venv .venv
 source .venv/bin/activate
+pip install -r requirements.txt
 
 # install dbt and the DuckDB adapter
 python -m pip install --upgrade pip
@@ -67,6 +65,9 @@ python -m pip install dbt-core dbt-duckdb duckdb
 cd mini_lake
 dbt seed            # load the CSV seed(s)
 dbt build           # build models and run tests
+dbt run             
+dbt test
+dbt debug
 
 # generate docs and serve locally (interactive)
 dbt docs generate
@@ -112,8 +113,6 @@ CI builds the project and runs all schema/data tests declared under `mini_lake/m
 This project is licensed under the terms in the `LICENSE` file in the repository root. Briefly:
 
 - You are free to use, modify, and share this project for personal, educational, or commercial purposes, subject to the license terms.
-
-If you would like a different license (MIT/Apache/BSD), please let me know, and I can update the `LICENSE` file and add the corresponding badges.
 
 ## Contributing & contact
 
