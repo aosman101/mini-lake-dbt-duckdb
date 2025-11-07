@@ -19,10 +19,6 @@
 
 [![dbt build](https://github.com/aosman101/mini-lake-dbt-duckdb/actions/workflows/dbt.yml/badge.svg)](https://github.com/aosman101/mini-lake-dbt-duckdb/actions/workflows/dbt.yml)
 
-[![dbt CI](https://img.shields.io/github/actions/workflow/status/OWNER/mini-lake-dbt-duckdb/ci.yml?branch=main)](https://github.com/OWNER/mini-lake-dbt-duckdb/actions)
-
-![dbt CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)
-
 
 Compact, local-first mini lakehouse designed with dbt Core and DuckDB. This repository showcases a reproducible analytics workflow using versioned CSV seeds, staging models, marts (aggregations), and dbt schema tests—perfect for learning, demonstrations, and portfolio projects.
 
