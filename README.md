@@ -4,7 +4,7 @@
 
 ---
 
-## What this project demonstrates (detailed)
+## What this project demonstrates
 
 - **Local-first reproducible analytics**: Utilise DuckDB files for efficient local analytics and employ dbt for model-driven transformations.
 - **Seed-driven testing**: Versioned CSV seed files offer consistent datasets for continuous integration and demonstrations (`dbt seed`).
@@ -18,6 +18,11 @@
  # mini-lake-dbt-duckdb
 
 [![dbt build](https://github.com/aosman101/mini-lake-dbt-duckdb/actions/workflows/dbt.yml/badge.svg)](https://github.com/aosman101/mini-lake-dbt-duckdb/actions/workflows/dbt.yml)
+
+[![dbt CI](https://img.shields.io/github/actions/workflow/status/OWNER/mini-lake-dbt-duckdb/ci.yml?branch=main)](https://github.com/OWNER/mini-lake-dbt-duckdb/actions)
+
+![dbt CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)
+
 
 Compact, local-first mini lakehouse designed with dbt Core and DuckDB. This repository showcases a reproducible analytics workflow using versioned CSV seeds, staging models, marts (aggregations), and dbt schema tests—perfect for learning, demonstrations, and portfolio projects.
 
