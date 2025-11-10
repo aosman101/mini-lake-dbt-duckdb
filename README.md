@@ -1,6 +1,6 @@
 # mini-lake-dbt-duckdb
 
-**Portable, local-first mini lakehouse** utilising **dbt Core + DuckDB**. It features versioned CSV seeds, models from staging to marts, schema tests, documentation, and an example of GitHub Actions CI — ideal for learning, prototyping, and portfolio demonstrations.
+**Portable, local-first mini lakehouse** using **dbt Core + DuckDB**. It features versioned CSV seeds, models from staging to marts, schema tests, documentation, and an example of GitHub Actions CI — ideal for learning, prototyping, and portfolio demonstrations.
 
 ---
 
@@ -50,7 +50,7 @@ mini-lake-dbt-duckdb/
 
 ## Quick start — run locally (interactive)
 
-These commands help you get up and running in a local development environment. Run them from the repository root.
+These commands will help you set up a local development environment. Execute them from the root of the repository.
 
 ```bash
 # create & activate a Python venv (Unix)
@@ -86,10 +86,10 @@ If you prefer to run dbt from the repo root, use the `--project-dir` flag or the
 
 This repository includes a `dbt build` workflow, located at `.github/workflows/dbt.yml`. It:
 
-- sets up Python 3.12
-- installs `dbt-core` and `dbt-duckdb`
-- creates a temporary `.ci/profiles.yml` pointing at a file-backed DuckDB (`data/ci.duckdb`)
-- runs `dbt build --profiles-dir .ci` inside `mini_lake`
+- Sets up Python 3.12.
+- Installs `dbt-core` and `dbt-duckdb`.
+- Creates a temporary `.ci/profiles.yml` pointing at a file-backed DuckDB (`data/ci.duckdb`).
+- Runs `dbt build --profiles-dir .ci` inside `mini_lake`.
 
 To run the same steps locally, create a small venv and invoke `dbt build --profiles-dir .ci` (see `RUNNING_DBT.md`).
 
@@ -107,7 +107,7 @@ dbt build --project-dir mini_lake
 
 ## Tests (what CI runs)
 
-CI builds the project and runs all schema/data tests declared under `mini_lake/models/schema.yml`. Locally, you can replicate this with `dbt build` after seeding.
+CI compiles the project and executes all schema/data tests defined in `mini_lake/models/schema.yml`. You can replicate this locally using `dbt build` after seeding the database.
 
 ## License
 
