@@ -6,7 +6,7 @@
 
 ## What this project demonstrates
 
-- **Local-first reproducible analytics**: Utilise DuckDB files for efficient local analytics and employ dbt for model-driven transformations.
+- **Local-first reproducible analytics**: Use DuckDB files for effective local analytics and utilise dbt for model-driven transformations.
 - **Seed-driven testing**: Versioned CSV seed files offer consistent datasets for continuous integration and demonstrations (`dbt seed`).
 - **Layered architecture**:
   - *Seeds*: small, versioned CSVs (source of truth for demos).
@@ -50,7 +50,7 @@ mini-lake-dbt-duckdb/
 
 ## Quick start — run locally (interactive)
 
-These commands will help you set up a local development environment. Execute them from the root of the repository.
+These commands will help you set up a local development environment. Execute them from the repository root.
 
 ```bash
 # create & activate a Python venv (Unix)
@@ -84,7 +84,7 @@ If you prefer to run dbt from the repo root, use the `--project-dir` flag or the
 
 ## Continuous Integration (GitHub Actions)
 
-This repository includes a `dbt build` workflow, located at `.github/workflows/dbt.yml`. It:
+This repository includes a `dbt build` workflow in `.github/workflows/dbt.yml`. It:
 
 - Sets up Python 3.12.
 - Installs `dbt-core` and `dbt-duckdb`.
@@ -113,7 +113,7 @@ CI compiles the project and executes all schema/data tests defined in `mini_lake
 
 This project is licensed under the terms in the `LICENSE` file in the repository root. Briefly:
 
-- You are free to use, modify, and share this project for personal, educational, or commercial purposes, subject to the license terms.
+- You are allowed to use, modify, and share this project for personal, educational, or commercial purposes, following the license terms.
 
 ## Contributing & contact
 
