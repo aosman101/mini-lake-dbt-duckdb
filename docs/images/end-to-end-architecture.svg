@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">mini-lake-dbt-duckdb End-to-End Architecture</title>
+  <desc id="desc">Architecture flow from versioned seed data through dbt transformations in DuckDB, quality checks, and CI outputs.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#eef2ff" />
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155" />
+    </marker>
+    <style>
+      .title { font: 700 34px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 500 16px 'Segoe UI', Arial, sans-serif; fill: #334155; }
+      .group-title { font: 700 17px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .node-title { font: 700 14px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .node-text { font: 500 12px 'Segoe UI', Arial, sans-serif; fill: #334155; }
+      .group {
+        stroke: #cbd5e1;
+        stroke-width: 2;
+        rx: 18;
+        ry: 18;
+      }
+      .node {
+        fill: #ffffff;
+        stroke: #94a3b8;
+        stroke-width: 1.5;
+        rx: 12;
+        ry: 12;
+      }
+      .flow {
+        stroke: #334155;
+        stroke-width: 2.2;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="900" fill="url(#bg)" />
+
+  <text x="36" y="48" class="title">mini-lake-dbt-duckdb</text>
+  <text x="36" y="76" class="subtitle">Local-first dbt Core + DuckDB analytics workflow</text>
+
+  <rect class="group" x="30" y="100" width="250" height="760" fill="#e0f2fe" />
+  <text x="50" y="132" class="group-title">Source Data</text>
+
+  <rect class="node" x="58" y="220" width="194" height="130" />
+  <text x="155" y="252" text-anchor="middle" class="node-title">orders.csv</text>
+  <text x="155" y="276" text-anchor="middle" class="node-text">Versioned seed data</text>
+  <text x="155" y="298" text-anchor="middle" class="node-text">mini_lake/seeds</text>
+  <text x="155" y="320" text-anchor="middle" class="node-text">Deterministic test input</text>
+
+  <rect class="group" x="300" y="100" width="340" height="760" fill="#ecfccb" />
+  <text x="320" y="132" class="group-title">Local Runtime</text>
+
+  <rect class="node" x="328" y="160" width="284" height="88" />
+  <text x="470" y="194" text-anchor="middle" class="node-title">dbt CLI</text>
+  <text x="470" y="216" text-anchor="middle" class="node-text">seed, run, test, build, docs</text>
+
+  <rect class="node" x="328" y="274" width="284" height="88" />
+  <text x="470" y="308" text-anchor="middle" class="node-title">dbt Profile: mini_lake</text>
+  <text x="470" y="330" text-anchor="middle" class="node-text">DuckDB connection settings</text>
+
+  <rect class="node" x="328" y="388" width="284" height="118" />
+  <text x="470" y="422" text-anchor="middle" class="node-title">DuckDB Database</text>
+  <text x="470" y="444" text-anchor="middle" class="node-text">Local file-backed warehouse</text>
+  <text x="470" y="466" text-anchor="middle" class="node-text">data/ci.duckdb (CI) or local</text>
+  <text x="470" y="488" text-anchor="middle" class="node-text">fast analytical execution</text>
+
+  <rect class="group" x="660" y="100" width="350" height="760" fill="#ede9fe" />
+  <text x="680" y="132" class="group-title">dbt Transformation Layers</text>
+
+  <rect class="node" x="692" y="174" width="286" height="82" />
+  <text x="835" y="206" text-anchor="middle" class="node-title">Seed Relation</text>
+  <text x="835" y="228" text-anchor="middle" class="node-text">seed_data.orders</text>
+
+  <rect class="node" x="692" y="288" width="286" height="98" />
+  <text x="835" y="320" text-anchor="middle" class="node-title">stg_orders (view)</text>
+  <text x="835" y="342" text-anchor="middle" class="node-text">field cleanup + typing</text>
+  <text x="835" y="364" text-anchor="middle" class="node-text">adds gross_amount</text>
+
+  <rect class="node" x="692" y="418" width="286" height="108" />
+  <text x="835" y="450" text-anchor="middle" class="node-title">fct_daily_sales (table)</text>
+  <text x="835" y="472" text-anchor="middle" class="node-text">daily order and revenue metrics</text>
+  <text x="835" y="494" text-anchor="middle" class="node-text">filters shipped/completed</text>
+
+  <rect class="group" x="1030" y="100" width="250" height="760" fill="#fef3c7" />
+  <text x="1050" y="132" class="group-title">Quality + Documentation</text>
+
+  <rect class="node" x="1060" y="232" width="190" height="84" />
+  <text x="1155" y="264" text-anchor="middle" class="node-title">dbt Tests</text>
+  <text x="1155" y="286" text-anchor="middle" class="node-text">not_null, unique,</text>
+  <text x="1155" y="304" text-anchor="middle" class="node-text">accepted_values</text>
+
+  <rect class="node" x="1060" y="346" width="190" height="84" />
+  <text x="1155" y="378" text-anchor="middle" class="node-title">dbt Docs</text>
+  <text x="1155" y="400" text-anchor="middle" class="node-text">lineage + metadata</text>
+
+  <rect class="node" x="1060" y="460" width="190" height="84" />
+  <text x="1155" y="492" text-anchor="middle" class="node-title">README + Notes</text>
+  <text x="1155" y="514" text-anchor="middle" class="node-text">usage + troubleshooting</text>
+
+  <rect class="group" x="1300" y="100" width="270" height="760" fill="#fee2e2" />
+  <text x="1320" y="132" class="group-title">Automation + Outputs</text>
+
+  <rect class="node" x="1336" y="238" width="198" height="90" />
+  <text x="1435" y="270" text-anchor="middle" class="node-title">GitHub Actions</text>
+  <text x="1435" y="292" text-anchor="middle" class="node-text">workflow: dbt build</text>
+  <text x="1435" y="312" text-anchor="middle" class="node-text">push/PR on main</text>
+
+  <rect class="node" x="1336" y="354" width="198" height="90" />
+  <text x="1435" y="386" text-anchor="middle" class="node-title">CI DuckDB Setup</text>
+  <text x="1435" y="408" text-anchor="middle" class="node-text">creates mini_lake/data</text>
+  <text x="1435" y="428" text-anchor="middle" class="node-text">and .ci/profiles.yml</text>
+
+  <rect class="node" x="1336" y="470" width="198" height="90" />
+  <text x="1435" y="502" text-anchor="middle" class="node-title">Result Artifacts</text>
+  <text x="1435" y="524" text-anchor="middle" class="node-text">run screenshots</text>
+  <text x="1435" y="544" text-anchor="middle" class="node-text">in results/</text>
+
+  <path class="flow" d="M 252 284 L 328 204" />
+  <path class="flow" d="M 470 248 L 470 274" />
+  <path class="flow" d="M 470 362 L 470 388" />
+
+  <path class="flow" d="M 612 448 L 692 215" />
+  <path class="flow" d="M 835 256 L 835 288" />
+  <path class="flow" d="M 835 386 L 835 418" />
+
+  <path class="flow" d="M 978 472 L 1060 274" />
+  <path class="flow" d="M 978 472 L 1060 388" />
+  <path class="flow" d="M 978 472 L 1060 502" />
+
+  <path class="flow" d="M 1250 274 L 1336 283" />
+  <path class="flow" d="M 1250 388 L 1336 399" />
+  <path class="flow" d="M 1250 502 L 1336 515" />
+</svg>
