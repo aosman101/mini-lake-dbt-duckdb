@@ -1,6 +1,6 @@
 # mini-lake-dbt-duckdb
 
-**Portable, local-first mini lakehouse** using **dbt Core + DuckDB**. It features versioned CSV seeds, models from staging to marts, schema tests, documentation, and an example of GitHub Actions CI — ideal for learning, prototyping, and portfolio demonstrations.
+**Portable, local-first mini lakehouse** using **dbt Core + DuckDB**. It includes versioned CSV seeds, models from staging to marts, schema tests, documentation, and an example GitHub Actions CI pipeline, making it ideal for learning, prototyping, and portfolio demonstrations.
 
 ---
 
